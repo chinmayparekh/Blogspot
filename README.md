@@ -30,9 +30,9 @@ git clone https://github.com/chinmayparekh/Blogspot.git
 cd Blogspot/ <br/>
 pip3 install -r requirements.txt
 
-6. ##Make migrations
+6. ## Make migrations
 python3 manage.py makemigrations
 python3 manage.py migrate
 
-7. ##Run the server
+7. ## Run the server
 python3 manage.py runserver
