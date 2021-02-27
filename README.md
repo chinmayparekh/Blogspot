@@ -3,10 +3,10 @@
 1. ## For installing virtual environment
 
 On macOS and Linux:
-python3 -m pip install --user virtualenv
+python3 -m pip3  install --user virtualenv
 
 On Windows:
-py -m pip install --user virtualenv
+py -m pip3 install --user virtualenv
 
 2. ## For creating virtual environment
 On macOS and Linux:
@@ -27,8 +27,12 @@ On Windows:
 git clone https://github.com/chinmayparekh/Blogspot.git
 
 5. ## Install requirements
-cd blogspot/
+cd Blogspot/ <br/>
 pip3 install -r requirements.txt
 
-6. ##Run
+6. ##Make migrations
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+7. ##Run the server
 python3 manage.py runserver
