@@ -32,5 +32,3 @@ pip3 install -r requirements.txt
 
 6. ##Run
 python3 manage.py runserver
-
-
