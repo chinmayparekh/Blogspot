@@ -4,7 +4,7 @@
             <article class="media content-section">
               <div class="media-body">
                 <div class="article-metadata">
-                  <a class="mr-2" href="#">{{ user.username }}</a>
+                  <a class="mr-2" href="{% url 'user_blogs' pk=user.pk %} ">{{ user.username }}</a>
                 </div>
               </div>
             </article>
