@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <!-- comments -->
                     {% with post.comments.count as total_comments %}
-                    <h2>{{ total_comments }} Comments</h2>
+                    <h4>{{ total_comments }} Comments</h4>
                     
                     <p>
                         {% endwith %} {% for comment in post.comments.all %}

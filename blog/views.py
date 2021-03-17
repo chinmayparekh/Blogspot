@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 from .forms import CommentForm
+from django.contrib.auth.models import User
 #dummy data
 # posts = [
 #     {
@@ -80,3 +81,9 @@ def add_comment_to_post(request, pk):
     else:
         form = CommentForm()
     return render(request, 'blog/add_comment_to_post.html', {'form': form})
+
+def all_users(request):
+    context = {
+        'users':User.objects.all()
+    }
+    return render(request, 'blog/all_users.html' , context)
