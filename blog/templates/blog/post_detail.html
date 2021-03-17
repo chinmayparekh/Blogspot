@@ -14,6 +14,33 @@
             </div>
             <h2 class="article-title">{{ object.title }}</h2>
             <p class="article-content">{{ object.content }}</p>
+            <hr>
+            <dev>
+            <a class="btn btn-primary ben-sm mt-1 mb-1" href="{% url 'add_comment_to_post' pk=post.pk %}">Leave a comment</a>
+            </dev>
+            <div class="col-md-8 card mb-4 mt-3 ">
+                <div class="card-body">
+                    <!-- comments -->
+                    {% with post.comments.count as total_comments %}
+                    <h2>{{ total_comments }} Comments</h2>
+                    
+                    <p>
+                        {% endwith %} {% for comment in post.comments.all %}
+                    </p>
+                    
+                        <div class="comment" style="padding" 10px;">
+                            <em class="font-weight-bolder"> 
+                                {{ comment.Name }} 
+                            <span class="text-muted font-weight-normal">{{ comment.created_date }}</span>
+                            </em>
+                            <br>
+                            <blockquote>{{ comment.Body | linebreaks }}</blockquote>
+                            <hr>
+                        </div>
+                    {% empty %}
+                        <p>No comments here yet :(</p>
+                    {% endfor %}
+            </div>
         </div>
         </article>
     {% endblock content %}
