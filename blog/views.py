@@ -64,6 +64,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
 
+
 @login_required
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -77,6 +78,7 @@ def add_comment_to_post(request, pk):
     else:
         form = CommentForm()
     return render(request, 'blog/add_comment_to_post.html', {'form': form})
+
 
 @login_required
 def all_users(request):
@@ -98,8 +100,6 @@ def my_blogs(request):
 @login_required
 def get_user_blogs(request, pk):
     if User.objects.filter(pk=pk).exists():
-        a = Post.objects.filter(author__id=pk)
-
         context = {
             'posts': Post.objects.filter(author__id=pk)
         }
