@@ -1,13 +1,13 @@
 {% extends "blog/base.html" %}
     {% block content %}    
-        <article class="media content-section">
+        <article style="background:#45d6f1;"class="media content-section">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href="#">{{ object.author }}</a>
+                <a style="color:black;"class="mr-2" href="#">{{ object.author }}</a>
                 <small class="text-muted">{{ object.date_posted|date:"d F, Y"}}</small>
                 {% if object.author == user %}
                     <dev>
-                        <a class="btn btn-secondary ben-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>    
+                        <a class="btn btn-secondary ben-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
                         <a class="btn btn-danger ben-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
                     </dev>
                 {% endif %}
@@ -16,7 +16,7 @@
             <p class="article-content">{{ object.content }}</p>
             <hr>
             <dev>
-            <a class="btn btn-primary ben-sm mt-1 mb-1" href="{% url 'add_comment_to_post' pk=post.pk %}">Leave a comment</a>
+            <a style="background:green;"class="btn btn-primary ben-sm mt-1 mb-1" href="{% url 'add_comment_to_post' pk=post.pk %}">Leave a comment</a>
             </dev>
             <div class="col-md-8 card mb-4 mt-3 ">
                 <div class="card-body">
