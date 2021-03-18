@@ -1,12 +1,12 @@
 body {
   background: #fafafa;
-  color: #333333;
+  color: #9fc2c4;
   margin-top: 5rem;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+  color: #aed8bc;
 }
 
 ul {
@@ -38,11 +38,11 @@ ul {
 }
 
 .article-title {
-  color: #444444;
+  color: #9fc7e9;
 }
 
 a.article-title:hover {
-  color: #428bca;
+  color: #e6e6e6;
   text-decoration: none;
 }
 

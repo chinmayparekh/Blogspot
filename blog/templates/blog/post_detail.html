@@ -1,9 +1,9 @@
 {% extends "blog/base.html" %}
     {% block content %}    
-        <article style="background:#45d6f1;"class="media content-section">
+        <article style="background:#172129;"class="media content-section">
         <div class="media-body">
             <div class="article-metadata">
-                <a style="color:black;"class="mr-2" href="#">{{ object.author }}</a>
+                <a style="color:rgb(128, 185, 189);"class="mr-2" href="#">{{ object.author }}</a>
                 <small class="text-muted">{{ object.date_posted|date:"d F, Y"}}</small>
                 {% if object.author == user %}
                     <dev>
@@ -16,7 +16,7 @@
             <p class="article-content">{{ object.content }}</p>
             <hr>
             <dev>
-            <a style="background:green;"class="btn btn-primary ben-sm mt-1 mb-1" href="{% url 'add_comment_to_post' pk=post.pk %}">Leave a comment</a>
+            <a style="background:rgb(40, 61, 40);"class="btn btn-primary ben-sm mt-1 mb-1" href="{% url 'add_comment_to_post' pk=post.pk %}">Leave a comment</a>
             </dev>
             <div class="col-md-8 card mb-4 mt-3 ">
                 <div class="card-body">

@@ -2,10 +2,10 @@
     {% block content %}
         {% if posts|length > 0 %}
             {% for post in posts %}
-                <article style="background:#66FCF1;"class="media content-section">
+                <article style="background:#172129;"class="media content-section">
                   <div class="media-body">
                     <div class="article-metadata">
-                      <p style="color:black;"class="mr-2" >{{ post.author }}</p>
+                      <p style="color:rgb(128, 185, 189);"class="mr-2" >{{ post.author }}</p>
                       <small class="text-muted">{{ post.date_posted|date:"d F, Y"}}</small>
                     </div>
                     <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
