@@ -1,10 +1,10 @@
 {% extends "blog/base.html" %}
     {% block content %}
         {% for user in users %}
-            <article style="background:#66FCF1;" class="media content-section">
+            <article style="background:#172129;" class="media content-section">
               <div class="media-body">
                 <div class="article-metadata">
-                  <a style="color:black;"class="mr-2" href="{% url 'user_blogs' pk=user.pk %} ">{{ user.username }}</a>
+                  <a style="color:rgb(120, 151, 151);"class="mr-2" href="{% url 'user_blogs' pk=user.pk %} ">{{ user.username }}</a>
                 </div>
               </div>
             </article>
