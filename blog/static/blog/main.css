@@ -7,7 +7,7 @@ body {
 #bg {
 
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 1366px 768px;
   background-position: center center;
   background-attachment: fixed;
 }
