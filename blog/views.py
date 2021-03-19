@@ -8,11 +8,11 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
 
-def home(request):
-    context = {
-        'posts': Post.objects.all()
-    }
-    return render(request, 'blog/home.html', context)
+# def home(request):
+#     context = {
+#         'posts': Post.objects.all()
+#     }
+#     return render(request, 'blog/home.html', context)
 
 
 class PostListView(ListView):
@@ -100,8 +100,10 @@ def my_blogs(request):
 @login_required
 def get_user_blogs(request, pk):
     if User.objects.filter(pk=pk).exists():
+        author_object=User.objects.get(pk=pk)
+
         context = {
-            'posts': Post.objects.filter(author__id=pk)
+            'posts': Post.objects.filter(author=author_object)
         }
         return render(request, 'blog/home.html', context)
     else:
