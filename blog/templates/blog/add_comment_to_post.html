@@ -3,8 +3,9 @@
 
 {% block content %}
     <h1>New comment</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-primary">Submit</button>
+    <form method="POST" class="post-form"> {{ form | crispy }}
+        {% csrf_token %}
+        <br>
+        <button type="submit" style="background:rgb(25, 21, 31);" class="save btn btn-primary ">Submit</button>
     </form>
 {% endblock %}

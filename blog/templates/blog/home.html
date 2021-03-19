@@ -2,22 +2,23 @@
     {% block content %}
         {% if posts|length > 0 %}
             {% for post in posts %}
-                <article style="background:#172129;"class="media content-section">
+                <article style="background: rgb(16,22,32,0.8);" class="media content-section">
                   <div class="media-body">
-                    <div class="article-metadata">
-                      <p style="color:rgb(128, 185, 189);"class="mr-2" >{{ post.author }}</p>
-                      <small class="text-muted">{{ post.date_posted|date:"d F, Y"}}</small>
-                    </div>
-                    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-                    <p class="article-content">{{ post.content }}</p>
-                    <br>
+                    <h2 style="color: #50ACE4;" class="article-title">{{ post.title }}</h2>
+                    <em><p style="color:rgb(128, 185, 189);"class="text-muted" >{{ post.author }} | {{ post.date_posted|date:"d F, Y"}}</p></em>
+                    <hr>
+    
+                    <p style="color: #B9A9AC"class="article-content">{{ post.content|safe|slice:":200" }}...</p>
+                    <h6><a class="btn btn-outline-danger w-100" href="{% url 'post-detail' post.id %}">Read More &rarr;</a></h6>
+                    
+                    <hr>
                     {% with post.comments.count as total_comments %}
-                        <span class="text-muted font-weight-normal">{{ total_comments }} Comments</span>
+                        <em><span class="text-muted font-weight-normal">{{ total_comments }} Comments</span></em>
                     {% endwith %}
                   </div>
                 </article>
         {% endfor %}
         {% else %}
-         <p><h1 style="color:white;">This User has not written any posts!</h1></p>
+         <p><h1 style="color:white;">This User has not written any posts :(</h1></p>
         {% endif %}
     {% endblock content %}

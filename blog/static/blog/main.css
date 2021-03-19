@@ -1,8 +1,17 @@
 body {
   background: #fafafa;
-  color: #9fc2c4;
+  color: white;
   margin-top: 5rem;
 }
+
+#bg {
+
+  background-repeat: no-repeat;
+  background-size: 1366px 768px;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
 
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,11 +31,16 @@ ul {
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
+  color: #ff0000;
 }
 
-.site-header .navbar-nav .nav-link.active {
+.site-header .navbar-nav .nav-link:active {
+  color: #ff0000;
   font-weight: 500;
+}
+
+#NewPost:target, #about:target{
+  color: #000000
 }
 
 .content-section {
