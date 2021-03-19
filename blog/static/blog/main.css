@@ -1,12 +1,21 @@
 body {
   background: #fafafa;
-  color: #333333;
+  color: white;
   margin-top: 5rem;
 }
 
+#bg {
+
+  background-repeat: no-repeat;
+  background-size: 1366px 768px;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+  color: #aed8bc;
 }
 
 ul {
@@ -22,11 +31,16 @@ ul {
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
+  color: #ff0000;
 }
 
-.site-header .navbar-nav .nav-link.active {
+.site-header .navbar-nav .nav-link:active {
+  color: #ff0000;
   font-weight: 500;
+}
+
+#NewPost:target, #about:target{
+  color: #000000
 }
 
 .content-section {
@@ -38,11 +52,11 @@ ul {
 }
 
 .article-title {
-  color: #444444;
+  color: #9fc7e9;
 }
 
 a.article-title:hover {
-  color: #428bca;
+  color: #e6e6e6;
   text-decoration: none;
 }
 
@@ -82,4 +96,8 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+
+.comment {
+  margin: 20px 0px 20px 20px;
 }

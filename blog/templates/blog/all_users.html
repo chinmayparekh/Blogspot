@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %}
+    {% block content %}
+        {% for user in users %}
+            <article style="background: rgb(16,22,32, 0.8);" class="media content-section">
+              <div class="media-body">
+                  <a class="btn btn-outline-danger" href="{% url 'user_blogs' pk=user.pk %} ">{{ user.username }}</a>
+              </div>
+            </article>
+        {% endfor %}
+    {% endblock content %}

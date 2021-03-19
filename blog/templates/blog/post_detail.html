@@ -1,0 +1,45 @@
+{% extends "blog/base.html" %}
+    {% block content %}    
+        <article style="background: rgb(16,22,32,0.8);" class="media content-section">
+        <div class="media-body">
+            <h2 style="color: #50ACE4;"article-title">{{ object.title }}</h2>
+                <em><p style="color:rgb(128, 185, 189);"class="text-muted">{{ object.author }} | {{ object.date_posted|date:"d F, Y"}}</p></em>
+                {% if object.author == user %}
+                    <dev>
+                        <a  class="btn btn-outline-secondary ben-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+                        <a  class="btn btn-outline-danger ben-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+                    </dev>
+                {% endif %}
+            </div>
+            <hr>
+            <p style="color: #B9A9AC" class="article-content">{{ object.content }}</p>
+            <hr>
+            <dev>
+            <h5><a class="btn btn-outline-danger w-100" href="{% url 'add_comment_to_post' pk=post.pk %}">Leave a comment &rarr;</a></h5>
+            </dev>
+            <div style="background: rgb(00, 00, 00, 0.8);" class="col-md-8 card mb-4 mt-3 ">
+                <div class="card-body">
+                    <!-- comments -->
+                    {% with post.comments.count as total_comments %}
+                    <h4 style="color: #50ACE4;">{{ total_comments }} Comments</h4>
+                    
+                    <p>
+                        {% endwith %} {% for comment in post.comments.all %}
+                    </p>
+                    
+                        <div class="comment" style="padding:0%;" 10px;>
+                            <em class="font-weight-bolder"> 
+                                {{ comment.Name }} 
+                            <span class="text-muted font-weight-normal">{{ comment.created_date }}</span>
+                            </em>
+                            <br>
+                            <blockquote style="color: #B9A9AC">{{ comment.Body | linebreaks }}</blockquote>
+                            <hr>
+                        </div>
+                    {% empty %}
+                        <p>No comments here yet :(</p>
+                    {% endfor %}
+            </div>
+        </div>
+        </article>
+    {% endblock content %}
