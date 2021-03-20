@@ -5,14 +5,11 @@ body {
 }
 
 #bg {
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
 }
-
-
 
 h1, h2, h3, h4, h5, h6 {
   color: #aed8bc;

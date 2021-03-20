@@ -6,6 +6,6 @@
     <form method="POST" class="post-form"> {{ form | crispy }}
         {% csrf_token %}
         <br>
-        <button type="submit" style="background:rgb(25, 21, 31);" class="save btn btn-primary ">Submit</button>
+        <button type="submit" style="background:rgb(25, 21, 31, 0.8);" class="save btn btn-outline-danger">Submit</button>
     </form>
 {% endblock %}
